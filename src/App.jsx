@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import FeatureGrid from './components/FeatureGrid.jsx';
+import HowItWorks from './components/HowItWorks.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-950 to-black text-slate-100">
+      <Navbar />
+      <main>
+        <Hero />
+        <FeatureGrid />
+        <HowItWorks />
+      </main>
+      <footer className="border-t border-white/10 mt-24 py-10">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-sm text-slate-400">© {new Date().getFullYear()} FluxHire — Automated Headhunting Platform</p>
+          <nav className="flex items-center gap-6 text-sm text-slate-300">
+            <a href="#solutions" className="hover:text-white transition">Solutions</a>
+            <a href="#companies" className="hover:text-white transition">For Companies</a>
+            <a href="#candidates" className="hover:text-white transition">For Candidates</a>
+            <a href="#contact" className="hover:text-white transition">Contact</a>
+          </nav>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
